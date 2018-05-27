@@ -1,7 +1,7 @@
 var express = require('express');
 var app = express();
 var MongoClient = require('mongodb').MongoClient;
-var url = 'mongodb://52.9.190.171:27017/assigndb';
+var url = 'mongodb://54.241.133.126:27017/assigndb';
 
 
 app.get('/hello', function(req, res){
