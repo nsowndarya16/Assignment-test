@@ -5,7 +5,7 @@ var url = 'mongodb://52.52.1.12:27017/assigndb';
 
 
 app.get('/hello', function(req, res){
-	res.send('Hello Stranger');
+	res.send('Helloo Stranger');
 });
 
 app.get('/hello/:name', function(req, res){
