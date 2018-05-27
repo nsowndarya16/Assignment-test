@@ -1,0 +1,17 @@
+{
+  "name": "assignment",
+  "version": "1.0.0",
+  "description": "simple hello api",
+  "main": "sayhello.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "body-parser": "*",
+    "express": "*",
+    "mongodb": "^3.1.0-beta4",
+    "mongoose": "*"
+  },
+  "author": "",
+  "license": "ISC"
+}
