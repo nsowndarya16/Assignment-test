@@ -1,14 +1,14 @@
 var express = require('express');
-var sayh = express();
+var app = express();
 var MongoClient = require('mongodb').MongoClient;
 var url = 'mongodb://13.57.204.109:27017/assigndb';
 
 
-sayh.get('/hello', function(req, res){
+app.get('/hello', function(req, res){
 	res.send('Hello Stranger');
 });
 
-sayh.get('/hello/:name', function(req, res){
+app.get('/hello/:name', function(req, res){
 	var nam=req.params.name;
 	res.send('Hello '+nam);
 	MongoClient.connect(url, function(err, db) {
@@ -24,5 +24,10 @@ sayh.get('/hello/:name', function(req, res){
 	
 	
 });
-sayh.listen(3000);
-console.log('test exec listnening');
+
+var port=process.env.PORT || 3000;
+//var port=3000;
+var server= app.listen(port,function(){
+	
+console.log('test exec listnening'+port);
+});
