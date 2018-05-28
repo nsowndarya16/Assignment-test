@@ -10,7 +10,7 @@ app.get('/hello', function(req, res){
 
 app.get('/hello/:name', function(req, res){
 	var nam=req.params.name;
-	res.send('Helloo '+nam);
+	res.send('Hello '+nam);
 	MongoClient.connect(url, function(err, db) {
 	if (err) throw err;
 	var dbo = db.db("assigndb");
