@@ -4,13 +4,13 @@ var MongoClient = require('mongodb').MongoClient;
 var url = 'mongodb://54.183.210.168:27017/assigndb';
 
 
-app.get('/hello', function(req, res){
-	res.send('Hello Stranger');
+app.get('/welcome', function(req, res){
+	res.send('Welcome Stranger');
 });
 
-app.get('/hello/:name', function(req, res){
+app.get('/welcome/:name', function(req, res){
 	var nam=req.params.name;
-	res.send('Hello '+nam);
+	res.send('Welcome '+nam);
 	MongoClient.connect(url, function(err, db) {
 	if (err) throw err;
 	var dbo = db.db("assigndb");
