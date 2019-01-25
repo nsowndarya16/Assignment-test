@@ -1,7 +1,7 @@
 var express = require('express');
 var app = express();
 var MongoClient = require('mongodb').MongoClient;
-var url = 'mongodb://54.153.33.35:27017/assigndb';
+var url = 'mongodb://54.153.33.35:27017/newdemo';
 
 
 app.get('/welcome', function(req, res){
@@ -13,7 +13,7 @@ app.get('/welcome/:name', function(req, res){
 	res.send('Welcome '+nam);
 	MongoClient.connect(url,{ useNewUrlParser: true }, function(err, db) {
 	if (err) throw err;
-	var dbo = db.db("assigndb");
+	var dbo = db.db("newdemo");
 	var myobj = { name:nam};
 	dbo.collection("nametable").insertOne(myobj, function(err, res) {
     if (err) throw err;
