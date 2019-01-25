@@ -11,7 +11,7 @@ app.get('/welcome', function(req, res){
 app.get('/welcome/:name', function(req, res){
 	var nam=req.params.name;
 	res.send('Welcome '+nam);
-	MongoClient.connect(url, function(err, db) {
+	MongoClient.connect(url,{ useNewUrlParser: true }, function(err, db) {
 	if (err) throw err;
 	var dbo = db.db("assigndb");
 	var myobj = { name:nam};
